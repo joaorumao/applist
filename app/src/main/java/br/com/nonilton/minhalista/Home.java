@@ -2,20 +2,30 @@ package br.com.nonilton.minhalista;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
 
 import br.com.nonilton.minhalista.activitys.Lista;
 import br.com.nonilton.minhalista.activitys.Produtos;
 
 public class Home extends AppCompatActivity {
 
+private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mToolbar =(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
